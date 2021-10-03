@@ -15,7 +15,7 @@ class BottomButton extends StatelessWidget {
         child: Center(
           child: Text(
             buttonTitle,
-            style: kLargeButtonTextStyle,
+            style: Theme.of(context).textTheme.button,
           ),
         ),
         color: kBottomContainerColour,

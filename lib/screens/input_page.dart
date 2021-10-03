@@ -7,6 +7,8 @@ import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/round_icon_button.dart';
 import 'package:bmi_calculator/calculator_brain.dart';
+import 'package:yaru/yaru.dart' as yaru;
+import 'package:yaru_icons/widgets/yaru_icons.dart';
 
 enum Gender {
   male,
@@ -43,7 +45,7 @@ class _InputPageState extends State<InputPage> {
                       selectedGender = Gender.male;
                     });
                   },
-                  colour: selectedGender == Gender.male
+                  color: selectedGender == Gender.male
                       ? kActiveCardColour
                       : kInactiveCardColour,
                   cardChild: IconContent(
@@ -59,7 +61,7 @@ class _InputPageState extends State<InputPage> {
                       selectedGender = Gender.female;
                     });
                   },
-                  colour: selectedGender == Gender.female
+                  color: selectedGender == Gender.female
                       ? kActiveCardColour
                       : kInactiveCardColour,
                   cardChild: IconContent(
@@ -72,13 +74,13 @@ class _InputPageState extends State<InputPage> {
           )),
           Expanded(
             child: ReusableCard(
-              colour: kActiveCardColour,
+              color: kActiveCardColour,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     'HEIGHT',
-                    style: kLabelTextStyle,
+                    style: Theme.of(context).textTheme.headline4,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -87,20 +89,18 @@ class _InputPageState extends State<InputPage> {
                     children: <Widget>[
                       Text(
                         height.toString(),
-                        style: kNumberTextStyle,
+                        style: Theme.of(context).textTheme.headline5,
                       ),
                       Text(
                         'cm',
-                        style: kLabelTextStyle,
+                        style: Theme.of(context).textTheme.headline5,
                       )
                     ],
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                      inactiveTrackColor: Color(0xFF8D8E98),
+                      inactiveTrackColor: yaru.Colors.disabledGreyDark,
                       activeTrackColor: Colors.white,
-                      thumbColor: Color(0xFFEB1555),
-                      overlayColor: Color(0x29EB1555),
                       thumbShape:
                           RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
@@ -126,23 +126,23 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: kActiveCardColour,
+                    color: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'WEIGHT',
-                          style: kLabelTextStyle,
+                          style: Theme.of(context).textTheme.headline4,
                         ),
                         Text(
                           weight.toString(),
-                          style: kNumberTextStyle,
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             RoundIconButton(
-                                icon: FontAwesomeIcons.minus,
+                                icon: YaruIcons.minus,
                                 onPressed: () {
                                   setState(() {
                                     weight--;
@@ -152,7 +152,7 @@ class _InputPageState extends State<InputPage> {
                               width: 10.0,
                             ),
                             RoundIconButton(
-                              icon: FontAwesomeIcons.plus,
+                              icon: YaruIcons.plus,
                               onPressed: () {
                                 setState(() {
                                   weight++;
@@ -167,23 +167,23 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: kActiveCardColour,
+                    color: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'AGE',
-                          style: kLabelTextStyle,
+                          style: Theme.of(context).textTheme.headline4,
                         ),
                         Text(
                           age.toString(),
-                          style: kNumberTextStyle,
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             RoundIconButton(
-                              icon: FontAwesomeIcons.minus,
+                              icon: YaruIcons.minus,
                               onPressed: () {
                                 setState(
                                   () {
@@ -196,7 +196,7 @@ class _InputPageState extends State<InputPage> {
                               width: 10.0,
                             ),
                             RoundIconButton(
-                                icon: FontAwesomeIcons.plus,
+                                icon: YaruIcons.plus,
                                 onPressed: () {
                                   setState(() {
                                     age++;

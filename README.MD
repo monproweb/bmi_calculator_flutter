@@ -1,4 +1,5 @@
 ![App Brewery Banner](https://github.com/londonappbrewery/Images/blob/master/AppBreweryBanner.png)
+![BMI Calculator Flutter](images/bmi_calculator_flutter.gif)
 
 
 # BMI Calculator 💪

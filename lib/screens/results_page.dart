@@ -29,14 +29,14 @@ class ResultsPage extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               child: Text(
                 'Your Result',
-                style: kTitleTextStyle,
+                style: Theme.of(context).textTheme.headline4,
               ),
             ),
           ),
           Expanded(
             flex: 5,
             child: ReusableCard(
-              colour: kActiveCardColour,
+              color: kActiveCardColour,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,12 +47,12 @@ class ResultsPage extends StatelessWidget {
                   ),
                   Text(
                     bmiResult,
-                    style: kBMITextStyle,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   Text(
                     interpretation,
                     textAlign: TextAlign.center,
-                    style: kBodyTextStyle,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ],
               ),

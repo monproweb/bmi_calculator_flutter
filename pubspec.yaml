@@ -12,6 +12,8 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   font_awesome_flutter: ^8.4.0
+  yaru: ^0.1.6
+  yaru_icons: ^0.0.5
 
 dev_dependencies:
   flutter_test:
